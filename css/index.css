@@ -17,9 +17,10 @@ a {
     box-sizing: border-box;
 }
 
-.name_site {
+.name_site,
+.dados_titulo {
     color: #4848f9;
-    font-family: Bebas Neue, sans-serif;
+    font-family: sans-serif;
 }
 
 .header_home {
@@ -28,7 +29,7 @@ a {
     align-items: center;
     justify-content: space-between;
     background-color: #272626;
-    box-shadow: 0px 6px 17px 7px #00000054;
+    box-shadow: 0px 4px 13px 2px #00000038;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -125,12 +126,6 @@ main {
     line-height: 1.5;
 }
 
-@media (max-width: 600px) {
-    .grid {
-        width: 100%;
-        flex-direction: column;
-    }
-}
 
 /* Pagina Curriculo */
 
@@ -142,6 +137,10 @@ textarea {
 
 .pag_curiculo {
     margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
 }
 
 .foto {
@@ -153,27 +152,46 @@ textarea {
     grid-column: 1;
 }
 
+.imagem {
+    width: 100px;
+}
+
+.perguntas_iniciais {
+    display: flex;
+    gap: 1rem;
+}
+
+.form_nome {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.adicionar_foto,
+#mostrarInfo {
+    border: 10px solid #272626;
+    border-radius: 7px;
+}
+
 #pegarInfo {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
-
-#sobre1p {
-    margin-bottom: 0;
-}
-
-#pegarInfo {
     margin: 20px;
+    gap: 5px;
+}
+
+#sobre1p,
+#formacaop {
+    margin-bottom: 0;
 }
 
 #mostrarInfo {
     background-color: #272626;
-    border: 10px solid #272626;
-    border-radius: 7px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    gap: 5px;
 }
 
 .nome_curriculo {
@@ -199,4 +217,19 @@ textarea {
 .contato_curriculo {
     grid-row: 2 / 5;
     grid-column: 1;
+}
+
+@media (max-width: 700px) {
+    .grid {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .pag_curiculo {
+        flex-direction: column;
+    }
+
+    #mostrarInfo {
+        height: 700px;
+    }
 }
